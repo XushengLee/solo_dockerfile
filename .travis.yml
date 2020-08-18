@@ -1,11 +1,18 @@
+language: bash
+
 sudo: required
 
 services:
   - docker
 
+branches:
+  only
+    - master
+
 script:
-- && docker build . -t xushenglee/solo:original
+  - docker build . -t xushenglee/solo:original
 
 after_script:
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-- docker push xushenglee/solo
+  - docker login --username="$DOCKER_PASSWORD" -p="$DOCKER_USERNAME" dockerhub
+  - docker push xushenglee/solo:original
+
