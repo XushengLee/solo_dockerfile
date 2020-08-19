@@ -6,7 +6,7 @@ services:
   - docker
 
 script:
-  - docker build . -t xushenglee/solo:original
+  - docker build -t xushenglee/solo:original .
 
 after_script:
   - docker login --username="$DOCKER_PASSWORD" -p="$DOCKER_USERNAME" dockerhub
