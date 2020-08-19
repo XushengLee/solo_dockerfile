@@ -5,6 +5,10 @@ sudo: required
 services:
   - docker
 
+before_install:
+- echo -e "machine github.com\n  login $GITHUB_TOKEN" > ~/.netrc
+- git lfs pull
+
 script:
   - docker build -t xushenglee/solo:original .
 
