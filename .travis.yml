@@ -13,6 +13,6 @@ script:
   - docker build -t xushenglee/solo:original .
 
 after_script:
-  - docker login --username="$DOCKER_PASSWORD" -p="$DOCKER_USERNAME" dockerhub
+  - docker login --username="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" dockerhub
   - docker push xushenglee/solo:original
 
