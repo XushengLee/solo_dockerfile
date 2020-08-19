@@ -13,5 +13,6 @@ script:
   - docker build -t xushenglee/solo:original .
 
 after_script:
-  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" docker.io && docker push xushenglee/solo:original
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push xushenglee/solo:original
 
