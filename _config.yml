@@ -1,4 +1,0 @@
-deploy:
-- type: git
-  repo: https://github.com/XushengLee/solo_dockerfile.git
-  branch: master
